@@ -1,4 +1,4 @@
-# Divide and Conquer - Most Popular Element of a Sorted List
+# Divide and Conquer - Find the Most Popular Element of a Sorted List
 A divide and conquer appraoch to finding the most popular element in a sorted list.
 
 Results are analyzed for correctness using brute-force.
