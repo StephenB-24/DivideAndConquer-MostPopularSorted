@@ -18,7 +18,7 @@ Picture to-be-inserted
 <h2>Files Included</h2>
 
 - Solution.java => This is where the divide-and-conquer solution lies
-- BruteForce.java => This is where problem generation, the brute-force solver, and the brute-force solution checker lie.
+- BruteForce.java => This is where problem generation, the brute-force solver (finds all valid solutions per example), and the brute-force solution checker lie.
 - Run.java => The main method lies here. It calls methods from above in a specific fashion, and is thoroughly commented for the reader.
 
 <h2>Runtime - Master Theorem</h2>
