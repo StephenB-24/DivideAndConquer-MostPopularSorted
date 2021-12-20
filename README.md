@@ -1,9 +1,9 @@
 # Divide and Conquer - Find the Most Popular Element of a Sorted List
 A divide and conquer appraoch to finding the most popular element in a sorted list.
 
-Results are analyzed for correctness using brute-force.
+Results are analyzed for correctness using brute-force to generate all valid possible answers.
 
-The runtime of the algrorithm is also broken down and analyzed with Master Theorem in following text.
+The runtime of the algrorithm is also broken down and analyzed with Master Theorem in the following text.
 
 <h2>The Problem</h2>
 
