@@ -21,9 +21,25 @@ public class Solution {
      * @param rightIndex The right-most index of the subarray.
      * @param <T> The element type in the ArrayList.
      * @return The element that is the most popular. If there are multiple, only one is returned.
+     * @throws IndexOutOfBoundsException If the rightIndex is greater than the leftIndex, or if either is outside the
+     *         bounds of the array, this exception is thrown.
      */
-    private static <T extends Comparable<T>> T popularSortedHelper(ArrayList<T> data, int leftIndex, int rightIndex)
+    private static <T extends Comparable<T>> T popularSortedHelper(ArrayList<T> data, int leftIndex, int rightIndex) throws IndexOutOfBoundsException
     {
+        // Validate data
+        if (rightIndex < leftIndex)
+        {
+            throw new IndexOutOfBoundsException("Right index cannot be less than the left index.");
+        }
+        else if (rightIndex > data.size() - 1)
+        {
+            throw new ArrayIndexOutOfBoundsException("Right index cannot be greater than the ArrayList");
+        }
+        else if (leftIndex < 0)
+        {
+            throw new ArrayIndexOutOfBoundsException("Left index cannot be less than 0.");
+        }
+        
         // Test base case, where sub-array is 1 element. Return this element if true.
         if (leftIndex == rightIndex)
         {
