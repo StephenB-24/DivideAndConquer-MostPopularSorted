@@ -2,10 +2,11 @@ import java.util.ArrayList;
 
 public class Solution {
     /**
+     * A divide-and-conquer function that solves the "most popular element of a sorted list" problem.
      *
-     * @param data
-     * @param <T>
-     * @return
+     * @param data The list of the comparable elements to analyze.
+     * @param <T> The type of the comparable elements.
+     * @return A single element from the list that is one of - or the - most popular element(s).
      */
     static <T extends Comparable<T>> T popularSorted(ArrayList<T> data)
     {
@@ -13,10 +14,11 @@ public class Solution {
     }
 
     /**
+     * A recursive divide-and-conquer helper function. This function is the heart of the algorithm.
      *
-     * @param data The sorted ArrayList to look through.
-     * @param leftIndex The left-most index of the subarray
-     * @param rightIndex The right-most index of the subarray
+     * @param data The list of the comparable elements to analyze.
+     * @param leftIndex The left-most index of the subarray.
+     * @param rightIndex The right-most index of the subarray.
      * @param <T> The element type in the ArrayList.
      * @return The element that is the most popular. If there are multiple, only one is returned.
      */
@@ -62,17 +64,19 @@ public class Solution {
     }
 
     /**
+     * A modified binary search that recursively finds the first occurrence of an element in a sorted list.
+     * Get the middle element, if the element we are looking for is smaller, recurse left. Recurse right otherwise.
+     * If the middle element is the correct element, check if it is the first one. If not, recurse left.
      *
-     * @param data
-     * @param findMe
-     * @param leftIndex
-     * @param rightIndex
-     * @param <T>
-     * @return
-     * @throws IndexOutOfBoundsException
+     * @param data The sorted ArrayList to look through.
+     * @param findMe The element to find.
+     * @param leftIndex The start index of the subarray to search through
+     * @param rightIndex The end index of the subarray to search through
+     * @param <T> The type of comparable element in the list.
+     * @return The first index that the 'findMe' element occurs.
+     * @throws IndexOutOfBoundsException If the rightIndex is greater than the leftIndex, or if either is outside the
+     *         bounds of the array, this exception is thrown.
      */
-    // Get the middle element, if the element we are looking for is smaller, recurse left. Recurse right otherwise.
-    // If the middle element is the correct element, check if it is the first one. If not, recurse left.
     private static <T extends Comparable<T>> int binarySearchFirstIndex(ArrayList<T> data, T findMe, int leftIndex, int rightIndex) throws IndexOutOfBoundsException
     {
         // Validate data
@@ -121,16 +125,19 @@ public class Solution {
     }
 
     /**
+     * A modified binary search that recursively finds the last occurrence of an element in a sorted list.
+     * Get the middle element, if the element we are looking for is smaller, recurse left. Recurse right otherwise.
+     * If the middle element is the correct element, check if it is the last one. If not, recurse right.
      *
-     * @param data
-     * @param findMe
-     * @param leftIndex
-     * @param rightIndex
-     * @param <T>
-     * @return
+     * @param data The sorted ArrayList to look through.
+     * @param findMe The element to find.
+     * @param leftIndex The start index of the subarray to search through
+     * @param rightIndex The end index of the subarray to search through
+     * @param <T> The type of comparable element in the list.
+     * @return The last index that the 'findMe' element occurs.
+     * @throws IndexOutOfBoundsException If the rightIndex is greater than the leftIndex, or if either is outside the
+     *         bounds of the array, this exception is thrown.
      */
-    // Get the middle element, if the element we are looking for is smaller, recurse left. Recurse right otherwise.
-    // If the middle element is the correct element, check if it is the last one. If not, recurse right.
     private static <T extends Comparable<T>> int binarySearchLastIndex(ArrayList<T> data, T findMe, int leftIndex, int rightIndex)
     {
         // Validate data

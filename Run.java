@@ -1,8 +1,9 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Run {
     public static void main(String[] args) throws Exception {
+        // This main method will test the accuracy of the divide-and-conquer method for the "most popular element of a
+        // sorted list" problem.
         // First we will do some very basic testing, with three different examples:
         // Example One:   [1, 1, 2, 3]
         // Example Two:   [1, 2, 2, 3]

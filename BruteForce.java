@@ -1,10 +1,8 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public class BruteForce {
     /**
-     *         Creates ArrayList permutations of integers.
+     * Creates an ArrayList of ordered permutations of integers, repetition allowed.
      *
      * @return An ArrayList of ArrayLists that are all Integer combinations integers 1 through 3
      *         from lengths 1 through 5.
@@ -52,9 +50,12 @@ public class BruteForce {
     }
 
     /**
+     * Given lists of numbers, finds all valid "popular" elements.
+     * For exmaple, [1, 2, 3, 4] can have 1, 2, 3, and 4 all as valid answers.
+     * Likewise, [1, 1, 2, 3] can only have 1 as a valid answer.
      *
-     * @param examples
-     * @return  An ArrayList which contains ArrayLists, where each element is a valid answer.
+     * @param examples An ArrayList containing ArrayLists of Integers, which are integer lists.
+     * @return An ArrayList which contains ArrayLists, where each element is a valid answer.
      */
     public static ArrayList<ArrayList<Integer>> FindValidAnswers(ArrayList<ArrayList<Integer>> examples)
     {
@@ -117,7 +118,21 @@ public class BruteForce {
         return validAnswers;
     }
 
-    public static <T extends Comparable<T>> Integer CountErrors(ArrayList<ArrayList<T>> bruteForcedAnswers, ArrayList<T> answersToCheck) throws Exception {
+    /**
+     *  This function counts the number of times that the newly made list of answers, from something like that of the
+     *  divide-and-conquer method creates, does not match the 'bruteForcedAnswers' list of accetable answers.
+     *
+     * @param bruteForcedAnswers This is a list of lists, like that obtained from "FindValidAnswers", where each list
+     *        is one containing all the valid answers to the corresponding examples.
+     * @param answersToCheck This is a newly created list, like that of which the divide-and-conquer algorithm creates,
+     *        and is the list that the method will test for accuracy against 'bruteForcedAnswers'
+     * @param <T> The comparable element type that each element of the lists will use.
+     * @return The number of times that an entry from 'answersToCheck' does not match the 'bruteForcedAnswers' list of
+     *         acceptable answers.
+     * @throws Exception If the 'bruteForcedAnswers' and 'answersToCheck' do not match, an error is thrown.
+     */
+    public static <T extends Comparable<T>> Integer CountErrors(ArrayList<ArrayList<T>> bruteForcedAnswers, ArrayList<T> answersToCheck) throws Exception
+    {
         if (answersToCheck.size() != bruteForcedAnswers.size())
         {
             throw new Exception("The answers to be checked do not match the size of the answer key.");
