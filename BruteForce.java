@@ -51,7 +51,7 @@ public class BruteForce {
 
     /**
      * Given lists of numbers, finds all valid "popular" elements.
-     * For exmaple, [1, 2, 3, 4] can have 1, 2, 3, and 4 all as valid answers.
+     * For example, [1, 2, 3, 4] can have 1, 2, 3, and 4 all as valid answers.
      * Likewise, [1, 1, 2, 3] can only have 1 as a valid answer.
      *
      * @param examples An ArrayList containing ArrayLists of Integers, which are integer lists.
